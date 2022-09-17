@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import {HubotIcon} from "@primer/octicons-react";
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link className="navbar-brand" href="/users/UserLev">
             <HubotIcon size={24} />

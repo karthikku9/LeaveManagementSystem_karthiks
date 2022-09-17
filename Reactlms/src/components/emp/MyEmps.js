@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Moment from 'moment';
 import { EyeIcon } from '@primer/octicons-react';
 
+
 const Home = () => {
   Moment.locale('en');
   const [users, setUser] = useState([]);
@@ -28,8 +29,9 @@ const Home = () => {
           <thead >
             <tr align="center">
               <th scope="col">#</th>
-              <th scope="col">employeeId</th>
-              <th scope="col">employeeName</th>
+              <th scope="col">EmployeeId</th>
+              <th scope="col">Profile Photo</th>
+              <th scope="col">EmployeeName</th>
               <th scope="col">Email</th>
               <th scope="col">designation</th>
               <th scope="col">datejoined</th>
@@ -42,6 +44,7 @@ const Home = () => {
               <tr align="center">
                 <th scope="row">{index + 1}</th>
                 <td>{user.empId}</td>
+                <td><img src={user.skills} alt="not_uploded_image" width="70" height="60"/></td>
                 <td>{user.employeeName}</td>
                 <td>{user.email}</td>
                 <td>{user.designation}</td>
@@ -53,8 +56,10 @@ const Home = () => {
                     <EyeIcon size={24} />
                   </Link>
                 </td>
+                
               </tr>
             ))}
+
           </tbody>
         </table>
       </div>

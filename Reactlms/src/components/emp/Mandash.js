@@ -23,6 +23,7 @@ const User = () => {
   useEffect(() => {
     loadUser();
   });
+  
 
   const loadUser = async () => {
     const res = await axios.get(`http://localhost:51511/api/Employees/Loginid/${id}`);

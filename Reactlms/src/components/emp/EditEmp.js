@@ -31,7 +31,7 @@ const EditUser = () => {
   const onSubmit = async e => {
     e.preventDefault();
     await axios.put(`http://localhost:51511/api/Employees/${user.id}`, user);
-    history.push("/");
+    history.push(`/emp/Dash/${ide}`);
   };
 
   const loadUser = async () => {
@@ -122,7 +122,7 @@ const EditUser = () => {
 
 
           <div className="form-group">
-          <label><h4>skills</h4></label>
+          <label><h4>Image url</h4></label>
             <input
               type="text"
               className="form-control form-control-lg"
@@ -157,7 +157,7 @@ const EditUser = () => {
             />
             </div>
             
-          <button className="btn btn-warning btn-block">Update User</button>
+          <button className="btn btn-warning btn-block">Update Profile</button>
         </form>
       </div>
     </div>

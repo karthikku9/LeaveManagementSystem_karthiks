@@ -89,7 +89,7 @@ const AddUser = () => {
   
      if(isWeekend(de)||isWeekend(df)){
       
-      alert("your apllyied leave is on weekends\nPlease dont click days on weekends")
+      alert("your applied leave is on weekends\nPlease dont click days on weekends")
       history.push(`/leave/Addleave/${ide}/${mid}/${ihl}`);
       
      }

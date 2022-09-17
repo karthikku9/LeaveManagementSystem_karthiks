@@ -63,6 +63,7 @@ const AddUser = () => {
   appliedOn: "",
   noOfDays: "",
   });
+  
 
   const { leaveFromDate,
   leaveToDate,  leavetype,

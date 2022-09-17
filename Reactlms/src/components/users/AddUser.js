@@ -122,7 +122,7 @@ const AddUser = () => {
             />
           </div>
           <div className="form-group">
-          <label><h4>skills</h4></label>
+          <label><h4>Enter ur image url</h4></label>
             <input
               type="text"
               className="form-control form-control-lg"

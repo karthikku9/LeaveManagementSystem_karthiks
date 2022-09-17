@@ -35,7 +35,7 @@ const EditUser = () => {
     const onSubmit = async e => {
         e.preventDefault();
         //setUser({inhandLeaves:ihd}.data);
-        user.inhandLeaves = user.inhandLeaves+(ihd);
+        user.inhandLeaves = user.inhandLeaves+parseInt(ihd);
         await axios.put(`http://localhost:51511/api/Employees/${user.id}`, user);
         history.push(`/leave/MyEmplev/${user.managerId}`);
     }
@@ -54,12 +54,12 @@ const EditUser = () => {
                             type="number"
                             placeholder="Enter Your inhandLeaves"
                             name="inhandLeaves"
-                            value={user.inhandLeaves+ihd}
+                            value={user.inhandLeaves+parseInt(ihd)}
                             onChange={e => onInputChange(e)}
                             readOnly
                         />
                     </div>
-                    <text align="center" >Applied or Update No of days={user.inhandLeaves - ihd}</text>
+                    <text align="center" >Applied or Update No of days={parseInt(ihd)}</text>
                     <button className="btn btn-warning">Go Back</button>
 
                 </form>

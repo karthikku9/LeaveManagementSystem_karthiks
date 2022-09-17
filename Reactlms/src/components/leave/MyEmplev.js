@@ -4,11 +4,13 @@ import { Link ,useParams} from "react-router-dom";
 import {ToolsIcon}from '@primer/octicons-react';
 import Moment from 'moment';
 
-const Myleaves = () => {
+
+const MyEmplev = () => {
   Moment.locale('en');
   const [users, setUser] = useState([]);
 
   const { ide} = useParams();
+ 
 
   useEffect(() => {
     loadUsers();
@@ -66,12 +68,12 @@ const Myleaves = () => {
                 <td>{Moment(user.AppliedOn).format('DD MMM yyyy')}</td>
                 <td>{user.manCom}</td>
                   <td>
-                  <Link
+                  {user.leaveStatus!=="Rejected" && <Link
                     class="btn btn-primary "
-                    to={`/leave/Accd/${user.id}/${ide}`}
+                    to={`/leave/Accd/${user.id}/${ide}/${user.empId}`}
                   >
                     <ToolsIcon size={24} />Accept/deny
-                  </Link>
+                  </Link>}
                   </td>
                  
                 
@@ -84,4 +86,4 @@ const Myleaves = () => {
   );
 };
 
-export default Myleaves;
+export default MyEmplev;

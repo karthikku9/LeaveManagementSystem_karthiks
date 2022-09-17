@@ -36,6 +36,7 @@ const Home = () => {
             <tr align="center">
               <th scope="col">#</th>
               <th scope="col">empId</th>
+              <th scope="col">Profile Photo</th>
               <th scope="col">employeeName</th>
               <th scope="col">Email</th>
               <th scope="col">designation</th>
@@ -54,6 +55,7 @@ const Home = () => {
               <tr align="center">
                 <th scope="row">{index + 1}</th>
                 <td>{user.empId}</td>
+                <td><img src={user.skills} alt="not_uploded_image" width="70" height="60"/></td>
                 <td>{user.employeeName}</td>
                 <td>{user.email}</td>
                 <td>{user.designation}</td>
