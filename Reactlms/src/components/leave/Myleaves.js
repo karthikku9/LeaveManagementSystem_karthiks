@@ -64,7 +64,7 @@ const sendEmail = async (name, email,from_name, message) => {
   return (
     <div className="container">
       <div className="py-4">
-        <h1>My Leaves</h1>
+        <h1>My Leaves, My InHand Leaves={ihl}</h1>
         <Link className="btn btn-primary" to={`/leave/Addleave/${ide}/${mid}/${ihl}`}>Add Leave</Link>
         <Link className="btn btn-warning" to={`/emp/Dash/${ide}`}>Back Nav</Link>
         <table className="table-dark table-striped table-bordered">
@@ -118,7 +118,7 @@ const sendEmail = async (name, email,from_name, message) => {
                 <Link
                     class="btn btn-warning"
                     onClick={() => sendEmail(emp.employeeName,emp.email,("Your Employee: "+user.empId),
-                      ("empId:"+user.empId+"  No of days:"+user.noOfDays+"  LeaveStartDate: "+user.leaveFromDate+"  leaveToDate: "+user.leaveToDate+"   leavetype: "+user.leavetype+"  reason: "+user.reason),
+                      ("empId:"+user.empId+"  No of days:"+user.noOfDays+"  LeaveStartDate: "+Moment(user.leaveFromDate).format('DD/MMM/yyy')+"  leaveToDate: "+Moment(user.leaveToDate).format('DD/MMM/yyy')+"   leavetype: "+user.leavetype+"  reason: "+user.reason),
                       )}
                   >
                     Send email

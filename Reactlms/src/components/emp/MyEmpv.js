@@ -45,7 +45,7 @@ const User = () => {
         <div className="col">
           <h1 className="display-6">Employee Id: {user.empId}</h1>
           <hr />
-          <ul className="list-group w-50">
+          <ul className="list-group w-70">
 
             <li className="list-group-item">employeeName: {user.employeeName}</li>
             <li className="list-group-item">email: {user.email}</li>

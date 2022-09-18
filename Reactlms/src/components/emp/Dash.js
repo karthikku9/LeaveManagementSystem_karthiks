@@ -65,7 +65,7 @@ const Mandash = () => {
         <div className="col">
           <text > <h4>Employee Id: {user.empId}</h4> </text>
           <hr />
-          <ul className="list-group w-50">
+          <ul className="list-group w-70">
 
             <li className="list-group-item"><h5>Full Name:   {user.employeeName}</h5> </li>
             <li className="list-group-item"><h5>Email:   {user.email}</h5></li>

@@ -59,7 +59,7 @@ const AddUser = () => {
 
     e.preventDefault();
     await axios.put(`http://localhost:51511/api/Leaves/${id}`, user);
-    sendEmail(emp.employeeName, emp.email, ("Your Manager: "+user.managerId), ("Your leave application has been : " + user.leaveStatus + " for leave deatails Id :" + id + " No of days: " + user.noOfDays + " LeaveStartDate: " + user.leaveFromDate + " leaveToDate: " + user.leaveToDate + " leavetype: " + user.leavetype + " reason: " + user.reason + " Applied on: " + user.appliedOn + " manger message :" + user.manCom))
+    sendEmail(emp.employeeName, emp.email, ("Your Manager: "+user.managerId), ("Your leave application has been : " + user.leaveStatus + " for leave deatails Id :" + id + " No of days: " + user.noOfDays + " LeaveStartDate: " + Moment(user.leaveFromDate).format('DD/MMM/yyy') + " leaveToDate: " + Moment(user.leaveToDate).format('DD/MMM/yyy') + " leavetype: " + user.leavetype + " reason: " + user.reason + " Applied on: " + Moment(user.appliedOn).format('DD/MMM/yyy') + " manger message :" + user.manCom))
     if (user.leaveStatus === "Rejected") {
       history.push(`/leave/Manupihl/${user.empId}/${user.noOfDays}`)
     }
@@ -72,7 +72,6 @@ const AddUser = () => {
     setUser(result.data);
     const res = await axios.get(`http://localhost:51511/api/Employees/Loginid/${ide}`);
     setEmp(res.data);
-
   };
 
   return (
@@ -83,6 +82,10 @@ const AddUser = () => {
           X Cancel
         </Link>
         <h2 className="text-center mb-4">Accept/Deny Leave</h2>
+        <div className="form-group">
+            <label hidden ><h4>Photo----------------- ----:</h4></label>
+          <img src={emp.skills} alt="not_uploded_image" width="100" height="100"/>
+          </div>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <label ><h4>EmployeeId  :</h4></label>
@@ -90,6 +93,19 @@ const AddUser = () => {
               type="text"
             >{user.empId}</text>
           </div>
+          <div className="form-group">
+            <label ><h4>Employee Name :</h4></label>
+            <text
+              type="text"
+            >{emp.employeeName}</text>
+          </div>
+          <div className="form-group">
+            <label ><h4>InHand Leaves  :</h4></label>
+            <text
+              type="text"
+            >{emp.inhandLeaves}</text>
+          </div>
+          
           <div className="form-group">
             <label><h4>No of Days  :</h4></label>
 
