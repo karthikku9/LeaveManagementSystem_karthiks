@@ -77,7 +77,7 @@ const AddUser = () => {
     
 //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  let dayys=user.noOfDays;
+  const dayys=user.noOfDays;
   const onSubmit = async e => {
     e.preventDefault();
      let de=new Date(leaveFromDate);
@@ -89,14 +89,17 @@ const AddUser = () => {
      else{
       user.noOfDays=calcBusinessDays(de,df);
      }
+
      if(isWeekend(de)||isWeekend(df)){
       alert("your apllyied leave is on weekends\nPlease dont click days on weekends")
       history.push(`/leave/Editleave/${idl}/${ide}/${mid}/${ihl}`);
      }
-     else if(user.noOfDays>(parseInt(ihl)+parseInt(ihl)))
+
+     else if(user.noOfDays>(ihl))
      {
      alert("Applied leave is greater than in hand leaves");
-     history.push(`/leave/Editleave/${idl}/${ide}/${mid}/${ihl}`);
+     loadUser();
+     
     }
     else{
     let ihd=ihl-user.noOfDays+dayys;
@@ -116,7 +119,7 @@ const AddUser = () => {
       <Link className="btn btn-warning" to={`/leave/Myleaves/${ide}/${mid}/${ihl}`} align="center">
         X Cancel
         </Link>
-        <h2 className="text-center mb-4">Edit leave IHL={parseInt(ihl)+parseInt(dayys)}</h2>
+        <h2 className="text-center mb-4">Edit leave</h2>
         <form onSubmit={e => onSubmit(e)}>
         <text>preview:{Moment(user.leaveFromDate).format('DD-MM-yyyy')}</text>
           <div className="form-group">
